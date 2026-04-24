@@ -1,7 +1,9 @@
-# 忽略 .vscode 文件夹及其下所有内容
 .vscode/
 
-# 忽略 log 文件夹及其下所有内容
+install/
+
+build/
+
 log/
 
 src/vrpn/build
