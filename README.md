@@ -19,12 +19,12 @@ Ros2 package for transport vrpn data to ros2 topic
    ``` yaml
       /vrpn_listener:
          ros__parameters:
-            server: 192.168.50.3                 # VRPN server在局域网内的IP,WINDY Lab配置为192.168.50.3
-            port: 3883                           # VRPN server的服务端口
-            frame_id: "world"                    # reference frame参数
-            mainloop_frequency: 100.0            # 主循环频率，频率越高，越不容易丢失VRPN数据包，但同时计算负载越大
-            refresh_trackers_frequency: 1.0      # 追踪器刷新频率，频率越高，发现新的VRPN tracker的实时性越强
-            tracker_mainloop_frequency: 100.0    # 追踪器主循环频率，频率越高，越不容易丢失VRPN数据包，但同时计算负载越大
+            server: 192.168.50.96               # VRPN server在局域网内的IP,WINDY Lab配置为192.168.50.96
+            port: 3883                          # VRPN server的服务端口
+            frame_id: "world"                   # reference frame参数
+            mainloop_frequency: 100.0           # 主循环频率，频率越高，越不容易丢失VRPN数据包，但同时计算负载越大
+            refresh_trackers_frequency: 1.0     # 追踪器刷新频率，频率越高，发现新的VRPN tracker的实时性越强
+            tracker_mainloop_frequency: 100.0   # 追踪器主循环频率，频率越高，越不容易丢失VRPN数据包，但同时计算负载越大
    ```
 
    * 根据动捕软件的数据发送设置，配置 `server` 和 `port` 参数
@@ -50,7 +50,7 @@ Ros2 package for transport vrpn data to ros2 topic
    ```bash
       <!-- source /opt/ros/${ROS_DISTRO}/setup.bash -->
 
-      cd vrpn_client_ros2/src
+      cd vicon_perception/src
 
       colcon build --packages-select vrpn_listener
    ```
@@ -60,7 +60,7 @@ Ros2 package for transport vrpn data to ros2 topic
    执行以下命令运行vrpn_client_ros2：
 
    ```bash
-      cd vrpn_client_ros2/src
+      cd vicon_perception/src
 
       source install/setup.bash
 
@@ -81,5 +81,5 @@ Ros2 package for transport vrpn data to ros2 topic
    执行以下命令将VICON数据转发进MAVROS用于PX4飞控的EKF融合：
 
    ```bash
-      bash ~/vrpn_client_ros2/src/vrpn_listener/scripts/run_vrpn.sh
+      bash ~/vicon_perception/src/vrpn_listener/scripts/run_vrpn.sh
    ```
