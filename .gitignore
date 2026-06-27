@@ -1,4 +1,8 @@
+```ignore
 .vscode/
+
+.vscode/c_cpp_properties.json
+.vscode/settings.json
 
 install/
 
@@ -11,3 +15,4 @@ src/vrpn/build
 src/build
 
 src/install
+```
